@@ -1,0 +1,56 @@
+1) Please provide a valid cache path.
+
+https://stackoverflow.com/questions/38483837/please-provide-a-valid-cache-path
+
+Criar estrututura de pastas em storage/framework:
+
+- sessions
+- views
+- cache
+
+2) Tela inicial com mensagem de Page Error
+
+Rodar o seguinte comando dentro do projeto:
+
+chmod -R 777 storage bootstrap/cache
+
+3) Class 'SoapClient' not found
+
+docker-compose build php-fpm (opção SOAP=true no docker-compose.yml)
+
+4) Erro de ldap ao rodar composer update
+
+//Dentro do workspace
+
+apt-get update
+apt-get install php7.0-ldap
+apt-get install php7.0-soap
+
+5) Tela inicial com mensagem ao logar
+
+Call to undefined function Adldap\ldap_explode_dn()
+
+Extensão ldap desabilitado na imagem php-fpm (incluir no dockerfile ou no LDAP=true)
+
+Forçar a recriação:  docker-compose up -d --force-recreate nginx postgres pgadmin redis
+
+6) Problemas ao carregar javascript
+
+Adicionar a seguinte linha no arquivo portal.conf (sendfile  off;)
+
+7) The stream or file "/var/www/storage/logs/laravel-2017-08-14.log" could not be opened: failed to open stream: Permission denied
+
+php artisan cache:clear 
+
+chmod -R 777 app/storage # for laravel < 5.4
+chmod -R 777 storage/ # for laravel >= 5.4
+
+composer dump-autoload
+
+8) Quando houver algum problema no servidor e o NGINX não estiver acessível, utilizar os comandos abaixo:
+
+getsebool -a | grep httpd 
+
+Se a propriedade "httpd_can_network_connect" estiver "off", utilizar o comando abaixo para torná-la "on":
+
+setsebool httpd_can_network_connect true

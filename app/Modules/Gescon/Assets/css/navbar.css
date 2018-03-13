@@ -1,0 +1,24 @@
+@media only screen and (max-width: 991px) and (min-width: 768px)
+.navbar.navbar-collapse .navbar-container {
+    background-color: #26b294;
+}
+
+.navbar-default {
+  background-color: #26b294;
+    border-color: #26b294;
+}
+
+.navbar .navbar-toggle {
+    background-color: #26b294;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.footer,
+.push {
+  height: 50px;
+}
+

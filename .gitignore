@@ -1,0 +1,17 @@
+/ci
+/node_modules
+/public/storage
+/public/uploads/sisadm/avatar
+/app/Modules/SiscontratosOld
+/public/modules/
+/vendor
+/storage/framework
+/.idea
+Homestead.json
+Homestead.yaml
+/.project
+/.settings/
+/.gitmodules
+/laradock
+composer.lock
+/public/uploads/

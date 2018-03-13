@@ -1,0 +1,16 @@
+Package Control
+A File Icon
+Blade Snippets
+Boxy Theme
+GitCutter
+Github tools
+GitHubinator
+Hayaku - tools for writing CSS faster
+Package Control
+PHP Completions Kit
+Phpcs
+SideBarEnhancements
+Skins
+SublimeGit
+Xdebug Client
+zzz A File Icon zzz

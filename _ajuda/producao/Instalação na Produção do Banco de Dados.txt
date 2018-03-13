@@ -1,0 +1,25 @@
+1) Criar srv_mf (host:postgres, user: mf, senha: p0stgr3s)
+
+2) Alterar usuário mf para permitir todas as opções (menos a última)
+
+3) Desconectar e conectar novamente para as opções fazerem efeito
+
+4) Criar mf_bi (senha: mf_bi2017@) e alterar para permitir logar.
+
+5) Criar spoa_portal (senha: sp0@_p0rt@l) e alterar para permitir logar. 
+
+6) Criar esquemas
+
+- mf (usuário owner mf/ permissão para usuário spoa_portal)
+- spoa_portal  (usuário owner spoa_portal)
+- spoa_portal_sismed (usuário owner spoa_portal)
+- spoa_portal_siscontratos (usuário owner spoa_portal)
+- spoa_portal_sisfone (usuário owner spoa_portal)
+- spoa_portal_sishelp (usuário owner spoa_portal)
+- spoa_portal_parla (usuário owner spoa_portal)
+
+7) php artisan migrate:refresh --seed
+
+8) php artisan module:migrate:refresh --seed
+
+

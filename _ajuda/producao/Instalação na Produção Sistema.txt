@@ -1,0 +1,33 @@
+// Criando pastas do projeto
+
+1) mkdir laravel
+
+2) cd laravel
+
+3) git clone http://10.206.52.29:9090/spoa/laradock.git
+
+4) git clone http://10.206.52.29:9090/spoa/portal.git
+
+5) cd laradock/
+
+6) docker-compose up -d nginx postgres pgadmin redis && docker-compose exec workspace bash
+
+//Dentro do workspace
+
+8) apt-get update
+
+9) apt-get install php7.0-ldap
+
+10) apt-get install php7.0-soap
+
+11) composer update
+
+12) cp .env.production .env
+
+13) trocar em config/auth.php de usuários para ldap
+
+14) chmod -R 777 storage bootstrap/cache (se der o erro no inicio)
+
+14) chmod -R 777 uploads (Permitir subir arquivos: SISMED)
+
+15) docker-compose build php-fpm (garantir a instalação do SOAP)

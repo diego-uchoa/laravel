@@ -1,0 +1,9 @@
+atualizar o composer.json
+
+composer update
+
+excluir o arquivo "datatables.php" da pasta "config"
+
+php artisan vendor:publish --tag=modules --force
+
+php artisan vendor:publish --tag=datatables

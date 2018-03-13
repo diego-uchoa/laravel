@@ -1,0 +1,77 @@
+1) Criar usuários:
+	- mf (já vem criado no laradock)
+	- mf_bi (mf_bi2017@)
+	- spoa_portal (sp0@_p0rt@l)
+	- spoa_portal_prisma (sp0@_p0rt@l_pr1sma)
+
+Obs1: Antes habilitar para o usuário "mf" (create role e create database)
+Obs2: Criar usuários com permissão de login
+
+2) Criar base:
+	- db_mf
+	- db_mf_bi
+
+3) Criar servers (pgadmin)
+	-srv_mf
+	-srv_mf_bi
+
+4) Criar os esquemas:
+	- mf (usuário mf)
+	- spoa_portal  (usuário spoa_portal)
+	- spoa_portal_sismed (usuário spoa_portal)
+	- spoa_portal_siscontratos (usuário spoa_portal)
+	- spoa_portal_sisfone (usuário spoa_portal)
+	- etc
+
+5) Dar permissões:
+
+ALTER USER spoa_portal SET search_path = spoa,spoa_portal;
+
+SHOW search_path;
+
+/* MF */
+ALTER DEFAULT PRIVILEGES IN SCHEMA mf GRANT ALL ON TABLES TO spoa_portal;
+GRANT USAGE ON SCHEMA mf TO spoa_portal; 
+GRANT CREATE ON SCHEMA mf TO spoa_portal;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA mf TO spoa_portal;
+GRANT SELECT ON ALL TABLES IN SCHEMA mf TO spoa_portal;
+
+/* SPOA_PORTAL */
+ALTER DEFAULT PRIVILEGES IN SCHEMA spoa_portal GRANT ALL ON TABLES TO spoa_portal;
+GRANT USAGE ON SCHEMA spoa_portal TO spoa_portal; 
+GRANT CREATE ON SCHEMA spoa_portal TO spoa_portal;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA spoa_portal TO spoa_portal;
+GRANT SELECT ON ALL TABLES IN SCHEMA spoa_portal TO spoa_portal;
+
+/* SPOA_PORTAL_SISHELP */
+ALTER DEFAULT PRIVILEGES IN SCHEMA spoa_portal_sishelp GRANT ALL ON TABLES TO spoa_portal;
+GRANT USAGE ON SCHEMA spoa_portal_sishelp TO spoa_portal; 
+GRANT CREATE ON SCHEMA spoa_portal_sishelp TO spoa_portal;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA spoa_portal_sishelp TO spoa_portal;
+GRANT SELECT ON ALL TABLES IN SCHEMA spoa_portal_sishelp TO spoa_portal;
+
+
+/* SPOA_PORTAL_SISCONTRATOS */
+ALTER DEFAULT PRIVILEGES IN SCHEMA spoa_portal_siscontratos GRANT ALL ON TABLES TO spoa_portal;
+GRANT USAGE ON SCHEMA spoa_portal_siscontratos TO spoa_portal; 
+GRANT CREATE ON SCHEMA spoa_portal_siscontratos TO spoa_portal;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA spoa_portal_siscontratos TO spoa_portal;
+GRANT SELECT ON ALL TABLES IN SCHEMA spoa_portal_siscontratos TO spoa_portal;
+
+/* SPOA_PORTAL_SISFONE */
+ALTER DEFAULT PRIVILEGES IN SCHEMA spoa_portal_sisfone GRANT ALL ON TABLES TO spoa_portal;
+GRANT USAGE ON SCHEMA spoa_portal_sisfone TO spoa_portal; 
+GRANT CREATE ON SCHEMA spoa_portal_sisfone TO spoa_portal;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA spoa_portal_sisfone TO spoa_portal;
+GRANT SELECT ON ALL TABLES IN SCHEMA spoa_portal_sisfone TO spoa_portal;
+
+/* SPOA_PORTAL_SISMED */
+ALTER DEFAULT PRIVILEGES IN SCHEMA spoa_portal_sismed GRANT ALL ON TABLES TO spoa_portal;
+GRANT USAGE ON SCHEMA spoa_portal_sismed TO spoa_portal; 
+GRANT CREATE ON SCHEMA spoa_portal_sismed TO spoa_portal;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA spoa_portal_sismed TO spoa_portal;
+GRANT SELECT ON ALL TABLES IN SCHEMA spoa_portal_sismed TO spoa_portal;
+
+7) Apagar esquema public
+
+

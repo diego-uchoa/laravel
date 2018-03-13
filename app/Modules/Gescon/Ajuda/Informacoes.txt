@@ -1,0 +1,16 @@
+1 - O sistema GESCON está dividido em Models, Controllers, Repositories e Services.
+
+2 - Está utilizando os seguintes webservices:
+	- ViaCEP: está diretamente associado no Javascript;
+	- SIAPE: está utilizando a funcionalidade de pesquisa já desenvolvida no SISADM;
+	- ComprasGov: o caminho do WS está informado no .env e é utilizado para recuperar os Fornecedores e dados do Contrato. E estão definidos nos arquivos "ContratoSiasgWsService.php", "ContratadaSiasgWsService.php" e "SiasgWsService.php" da pasta "Services" do GESCON.
+
+3 - Tipos de Contrato:
+
+	- Os contratos "Terceirização", "Vigilante", "Brigada" e "Limpeza" estão todos contemplados pelos arquivos especificos: 
+		- Services/ContratoService.php
+		- Services/ContratoTerceirizacaoService.php
+		- Repositories/ContratoRepository.php
+		- Repositories/ContratoItemContratacaoTerceirizacaoRepository.php
+		- Models/Contrato.php
+		- Models/ContratoItemContratacaoTerceirizacao.php

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="bootstrap/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Test.php">./app/Modules</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+            <exclude>
+                <!-- Remove Breadcrumbs, Routes, Factories do Analisador -->
+                <directory>./app/Modules/*/Http/Breadcrumbs</directory>
+                <directory>./app/Modules/*/Routes</directory>                
+                <directory>./app/Modules/*/Database/Factories</directory>  
+
+                <!-- Remove projeto duplicado -->
+                <directory>./app/Modules/Sismed_alterado</directory>  
+
+                <!-- Remove projetos que não estão em homologação -->
+                <directory>./app/Modules/Sisfone</directory>
+                <directory>./app/Modules/Siscontratos</directory>
+
+            </exclude>
+        </whitelist>        
+    </filter>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="QUEUE_DRIVER" value="sync"/>
+        <ini name="memory_limit" value="2048M"/>
+    </php>
+    <logging>
+        <log type="coverage-html" target="./ci/codeCoverage/" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-clover" target="./ci/codeCoverage/codeCoverage.xml"/>
+        <log type="metrics-xml" target="./ci/codeCoverage/metrics.xml"/>
+        <log type="test-xml" target="./ci/codeCoverage/logfile.xml" logIncompleteSkipped="false"/>
+    </logging>
+</phpunit>

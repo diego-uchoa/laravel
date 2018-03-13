@@ -1,0 +1,50 @@
+<div class="modal fade" id="modal-create" role="dialog" data-toggle="modal">
+	
+	<div class="modal-dialog">
+
+		<div class="modal-content">
+
+			@if($mode == "update")
+				{!! Form::model($unidadeMedidaItemContratacao, ['route'=>['gescon::unidades_medida_item_contratacao.update', $unidadeMedidaItemContratacao->id_unidade_medida_item_contratacao], 'method'=>'put', 'id'=>'formulario']) !!}
+				<div class="modal-header">
+					<a class="close" data-dismiss="modal">&times;</a>
+					<h3>
+						Editar Unidade Medida Item Contratacao 
+						<small>
+					        <i class="ace-icon fa fa-angle-double-right"></i>
+					        {{ $unidadeMedidaItemContratacao->ds_unidade_medida_item_contratacao }}
+					    </small>
+					</h3>
+				</div>	
+			@else
+				{!! Form::open(['route'=>'gescon::unidades_medida_item_contratacao.store', 'id'=>'formulario']) !!}
+				<div class="modal-header">
+					<a class="close" data-dismiss="modal">&times;</a>
+					<h3>Criar Novo Unidade Medida Item Contratacao </h3>
+				</div>	
+			@endif
+
+				<div class="modal-body">
+					@include('gescon::unidades_medida_item_contratacao._form',['submit_text' => 'Salvar'])
+				</div>
+	        	
+	        	<div class="modal-footer">
+					{!! Form::button('Salvar', ['class'=>'btn btn-sm btn-primary', 'id' => 'btnFormSalvarAJAX']) !!}
+				</div>
+
+	        {!! Form::close() !!}
+
+        	<div id='snippet'>
+			   
+			</div>
+
+			<!-- In case that we want redraw section-->
+			<div id='mySection'>
+			    
+			</div>
+			
+		</div>
+
+	</div>
+
+</div>

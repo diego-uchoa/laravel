@@ -1,0 +1,118 @@
+// GIT
+
+//PROBLEMA DE LOCK
+rm -f ./.git/index.lock
+
+
+//VAGRANT
+
+vagrant up && vagrant ssh
+
+//DOCKER
+
+cd /vagrant/laravel/laradock && docker-compose up -d nginx postgres pgadmin redis && docker-compose exec workspace bash
+
+docker-compose up -d nginx postgres pgadmin redis && docker-compose exec workspace bash
+
+docker-compose up -d --force-recreate nginx postgres pgadmin redis
+
+
+# Delete all containers
+docker rm $(docker ps -a -q)
+
+# Delete all images
+docker rmi $(docker images -q)
+
+# Para, Limpa e Limpa os volumes
+docker stop $(docker ps -qa) && docker rm $(docker ps -qa) && docker volume rm $(docker volume ls -q)
+
+
+// PORTAL
+
+php artisan migrate:refresh --seed && php artisan cache:clear
+
+php artisan migrate:refresh --seed
+
+php artisan migrate:rollback
+
+php artisan migrate --seed
+
+php artisan make:migration create_users_table
+
+php artisan cache:clear
+
+
+//SISADM
+
+php artisan module:migrate:refresh sisadm --seed
+
+php artisan module:migrate:reset && php artisan migrate:refresh --seed && php artisan module:migrate:refresh sisadm --seed && php artisan cache:clear
+
+
+//MODULOS
+
+php artisan module:migrate:reset
+
+php artisan module:list
+
+php artisan make:module:migration sisadm create_event_models_table
+
+php artisan module:migrate:refresh --seed
+
+php artisan module:migrate:refresh siscontratos --seed && php artisan cache:clear
+
+php artisan module:migrate:refresh sisfone --seed
+
+php artisan module:migrate:refresh sisadm --seed
+
+php artisan module:migrate:refresh sishelp --seed
+
+php artisan make:module:policy sisfone TelefonePolicy
+
+>>Publicar assets no public
+
+php artisan vendor:publish --tag=modules --force
+
+//DEBUG
+
+Debugbar::info($object);
+
+//MODULO ESPECIFICO
+php artisan module:migrate:reset sishelp && php artisan migrate:refresh --seed && php artisan module:migrate:refresh sishelp --seed && php artisan cache:clear
+
+//TODOS MODULOS
+php artisan module:migrate:reset && php artisan migrate:refresh --seed && php artisan module:migrate:refresh --seed && php artisan cache:clear
+
+
+//IMPORTANDO USUÁRIOS DO LDAP (50 usuários)
+php artisan adldap:import
+
+//AGENDANDO ROTINAS NO CRON PARA O LARAVEL
+* No workspace do Portal, realizar o comando abaixo:
+     crontab -e
+
+* Adicionar na última linha o comando abaixo:
+     * * * * * php /var/www/portal/artisan schedule:run 1>> /dev/null 2>&1
+
+
+//NGINX
+
+//ARQUIVO DE CONFIGURAÇÃO
+/etc/nginx/conf.d/sistemas.conf
+
+nginx -s reload
+
+service nginx restart
+
+service nginx stop
+
+//ATUALIZAÇÃO DO COMPOSER
+
+composer self-update
+
+//PHPUNIT
+
+phpunit
+
+~/sonar-runner-2.4/bin/sonar-runner -e -X
+

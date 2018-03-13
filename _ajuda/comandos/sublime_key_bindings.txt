@@ -1,0 +1,11 @@
+[
+	{ "keys": ["ctrl+1"], "command": "focus_group", "args": { "group": 0 } },
+	{ "keys": ["ctrl+2"], "command": "focus_group", "args": { "group": 1 } },
+	{ "keys": ["ctrl+3"], "command": "focus_group", "args": { "group": 2 } },
+
+	{ "keys": ["ctrl+v"], "command": "paste_and_indent" },
+	{ "keys": ["ctrl+shift+w"], "command": "close_all" },
+	{ "keys": ["ctrl+alt+shift+s"], "command": "save_all" },
+
+	{ "keys": ["f12"], "command": "reindent", "args": {"single_line": false} } 
+]

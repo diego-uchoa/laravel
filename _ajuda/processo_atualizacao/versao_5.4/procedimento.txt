@@ -1,0 +1,4 @@
+Após executar o comando "composer update", realizar os comandos abaixo:
+
+1 - Se existir, excluir o arquivo "bootstrap/cache/compiled.php";
+2 - Após atualizar todos os pacotes, você deve rodar os comandos "php artisan view:clear" e "php artisan route:clear";

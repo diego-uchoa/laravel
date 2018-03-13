@@ -1,0 +1,219 @@
+body.light-login {
+	background: #ebe6e0;
+}
+
+.navbar {
+	background: #408abf;
+}
+
+.blue {
+	color: #408abf !important;
+}
+
+.widget-color-blue {
+  border-color: #408abf;
+}
+
+.help-link {
+  font-size:17px;
+}
+
+.widget-color-blue > .widget-header {
+  background-color: #408abf;
+  border-color: #408abf;
+}
+
+.login-box .forgot-password-link,
+.login-box .user-signup-link,
+.forgot-box .back-to-login-link,
+.signup-box .back-to-login-link {
+	color: #fff;
+	font-weight: 400;
+}
+
+.btn-primary:hover, .btn-primary:active, .open > .btn-primary.dropdown-toggle {
+  background-color: #083b8c !important;
+  border-color: #083b8c;
+}
+
+.btn-success:hover, .btn-success:active, .open > .btn-success.dropdown-toggle {
+  background-color: #449d44 !important;
+  border-color: #449d44;
+}
+
+.btn-danger:hover, .btn-danger:active, .open > .btn-danger.dropdown-toggle {
+  background-color: #b74635 !important;
+  border-color: #b74635;
+}
+
+.btn-default:hover, .btn-default:active, .open > .btn-default.dropdown-toggle {
+  background-color: #8b9aa3 !important;
+  border-color: #8b9aa3;
+}
+
+.forgot-box .toolbar,
+.signup-box .toolbar {
+  background: #408abf;
+  border-top: 2px solid #597597;
+}
+
+
+#js-error .modal-overlay, #js-error .noscript-overlay {
+  z-index: 3000;
+  display: block;
+}
+#js-error .overlay, #js-error .noscript-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  display: block;
+  filter: alpha(opacity=50);
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  /* IE 5-7 */
+  filter: alpha(opacity=50);
+  /* Netscape */
+  -moz-opacity: 0.5;
+  /* Safari 1.x */
+  -khtml-opacity: 0.5;
+  /* Good browsers */
+  opacity: 0.5;
+}
+
+#js-error .modal.modal-warning {
+  border: 5px solid #408abf;
+}
+
+#js-error .modal {
+	z-index: 4000;
+  position: fixed;
+  width: 600px;
+  min-width: 380px;
+  left: 50%;
+  right: 50%;
+  bottom: auto;
+  top: 50px;
+  margin-left: -300px;
+  padding: 20px;
+  background: #fff;
+  display: block;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+.dropdown-navbar .msg-body {
+  margin-left: 0;
+}
+
+.dropdown-yellow > li:hover > a {
+  background: #ebe6e0;
+}
+
+pre {
+  color:#fff;
+  background: none;
+  border: none;
+}
+
+.sidebar {
+  width: 230px;
+}
+
+.sidebar+.main-content{
+  margin-left:230px
+}
+
+:root {
+  --near-black: #111;
+}
+
+.dropdown-navbar.navbar-grey{border-color:#aaa}
+
+.dropdown-navbar.navbar-grey>li:hover{background-color:#fcf4f9}
+
+.dropdown-navbar.navbar-grey>li.dropdown-header{background-color:#f7ecf2;color:#b471a0;border-bottom-color:#aaa}
+
+.dropdown-navbar.navbar-grey>li.dropdown-header>.ace-icon{color:#c06090}
+
+.dropdown-navbar.navbar-grey>li>a{border-top-color:#f3e4ec}
+
+.dropdown-navbar.navbar-grey .nav-tabs>li.active>a{border-bottom:2px solid #999!important;color:#4b4b4b!important;background-color:#d9d9d9!important}
+
+.dropdown-navbar.navbar-grey .nav-tabs>li:not(.active)>a:hover{color:#BA7396}
+
+.dropdown-navbar.navbar-grey .nav-tabs>li>a:before{background-color:#CEBBCB}
+
+.dropdown-navbar.navbar-grey .nav-tabs>li>a{border-bottom-color:#CEBBCD!important}
+
+.infobox {
+  margin: 1px 1px 0 0;
+  padding: 4px;
+}
+
+.tab-content>.tab-pane {
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.tab-content>.tab-pane.active {
+  height: auto;
+}
+
+.modal {
+  overflow-y: scroll;
+}
+
+.dataTables_processing {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+
+    margin-left: -50%;
+    margin-top: -25px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.div-row-border-bottom {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: solid 1px #D9D9D9;
+}
+.div-row-border-top {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-top: solid 1px #D9D9D9;
+}
+.div-column-border-right {
+  border-right: solid 1px #D9D9D9;
+}
+.div-column-border-left {
+  border-left: solid 1px #D9D9D9;
+}
+
+.profile-user-info.link-row {
+  word-break: break-word;
+}
+
+
+/* remove spinner input number */
+/*firefox*/
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/*chrome*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.navy {
+  color: #0E3455;
+}

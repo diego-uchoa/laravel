@@ -1,0 +1,4 @@
+Colocar no arquivo do cmder em config/user-aliases.cmd
+
+i.=cd c:\Users\88958949104\Andre\desenvolvimento\centos\ && vagrant up && vagrant ssh
+e.=cd c:\Users\88958949104\Andre\desenvolvimento\centos\laravel\portal

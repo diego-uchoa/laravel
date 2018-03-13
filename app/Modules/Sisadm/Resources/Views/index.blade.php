@@ -1,0 +1,1 @@
+@extends('sisadm::layouts.master')
