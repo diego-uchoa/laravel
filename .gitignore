@@ -5,7 +5,6 @@
 /app/Modules/SiscontratosOld
 /public/modules/
 /vendor
-/storage/framework
 /.idea
 Homestead.json
 Homestead.yaml
